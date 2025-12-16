@@ -148,7 +148,22 @@ def clock_api():
 
 
 # Exercise: 
-# write a flask route /tz-all that shows all the timezones in alphabetical order. Fork the git repo first,
+# write a flask route /tz-all that shows all the timezones in alphabetical order. Fork the git repo to your account first before cloning it. 
+@app.route("/tz-all")
+def tz_all():
+    """
+    Shows all timezones
+    """ 
+    res_ = str()
+    all_tzs = pytz.all_timezones
+
+    for tz_ in all_tzs:
+        res_ += f"<h2>{tz_}</h2>\n"
+      
+    return res_
+        
+
+
 
 # run the flask app
 app.run(host="0.0.0.0", debug=True)
