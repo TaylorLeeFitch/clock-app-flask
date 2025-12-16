@@ -1,10 +1,3 @@
-# exercise:
-# add another route called greeting()
-# when users visit /greeting , it returns a greeting
-
-## minimal flask all from the docs
-# RUN THIS O
-
 # importing Flask from the flask module
 from flask import Flask
 import random as rn
@@ -87,22 +80,9 @@ def get_tzs(list_, n=5):
         res['timezones'].append(entry_)
     
     return res 
-    
 
 
-
-
-# creating a home route that returns "Hello World"
-@app.route("/") # decorater -> route
-def hello_world():
-    """
-    When I visit the home route,
-    this string is returned
-    """
-    return "<p>Hello, World!</p>"
-
-
-@app.route('/welcome')
+@app.route('/')
 def welcome():
     """
     returns a welcome string when visiting the website
@@ -137,7 +117,6 @@ def time():
     Docstring for /time route
     returns times for 5 different time zones
     """ 
-
     res_ =str()
 
     # select first 5
@@ -167,9 +146,6 @@ def clock_api():
     # return dictionary (rendered as JSON in the browser)
     all_tzs = pytz.all_timezones
     return get_tzs(all_tzs)
-
-    
-
 
 # run the flask app
 app.run(host="0.0.0.0", debug=True)
