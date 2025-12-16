@@ -139,13 +139,16 @@ def time():
 
     return res_
 
-
 @app.route("/clock-api") 
 def clock_api():
 
     # return dictionary (rendered as JSON in the browser)
     all_tzs = pytz.all_timezones
     return get_tzs(all_tzs)
+
+
+# Exercise: 
+# write a flask route /tz-all that shows all the timezones in alphabetical order. Fork the git repo first,
 
 # run the flask app
 app.run(host="0.0.0.0", debug=True)
