@@ -5,7 +5,7 @@ Flask app for seeing clock times in 5 random places in the world, includes API E
 ## Running Bash script to test clock-api
 
 ```
-bash api-smoke-test.sh
+$ bash api-smoke-test.sh
 ```
 returns 
 ```
