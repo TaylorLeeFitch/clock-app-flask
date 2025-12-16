@@ -1,5 +1,5 @@
 # importing Flask from the flask module
-from flask import Flask
+from flask import Flask, render_template
 import random as rn
 import pytz
 from datetime import datetime as dt
@@ -156,14 +156,8 @@ def tz_all():
     """ 
     res_ = str()
     all_tzs = pytz.all_timezones
-
-    for tz_ in all_tzs:
-        res_ += f"<h2>{tz_}</h2>\n"
       
-    return res_
+    return render_template('tz.html', tzs=all_tzs)
         
-
-
-
 # run the flask app
 app.run(host="0.0.0.0", debug=True)
